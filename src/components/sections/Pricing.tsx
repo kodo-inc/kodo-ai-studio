@@ -1,0 +1,100 @@
+const plans = [
+  {
+    name: "AI導入サポート",
+    price: "5万円〜",
+    sub: "AI活用フェーズを月額で伴走",
+    description:
+      "AI活用フェーズの全般を月額で伴走支援。ツール選定、社内運用ルール整備、メンバーからの相談対応など、AIを業務に定着させるまでの伴走を継続的に提供します。",
+    emphasis: false,
+  },
+  {
+    name: "サービス開発",
+    price: "20万円〜",
+    sub: "業務AIアプリの設計・開発・導入",
+    description:
+      "課題整理 / 仕様設計 / 開発 / 導入支援を含みます。小規模な業務支援アプリから対応可能です。",
+    emphasis: false,
+  },
+  {
+    name: "PM支援",
+    price: "要相談",
+    sub: "大規模プロジェクト / 新規事業のPMを担います",
+    description:
+      "大規模プロジェクトのマネジメント経験者や、元起業家などの人材が社内に入ってプロジェクトを進行いたします。",
+    emphasis: false,
+  },
+];
+
+export default function Pricing() {
+  return (
+    <section
+      id="pricing"
+      className="border-b border-gray-200 bg-white py-20 md:py-28"
+    >
+      <div className="mx-auto max-w-6xl px-5">
+        <div className="max-w-2xl">
+          <div className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+            Pricing
+          </div>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-[-0.02em] text-gray-900 md:text-4xl">
+            料金の目安
+          </h2>
+          <p className="mt-5 text-base leading-7 text-gray-600">
+            AI導入のフェーズや課題に応じて、各メニューを組み合わせてご活用いただけます。
+            詳細は初回ヒアリングの上で、個別にお見積りいたします。
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {plans.map((p) => (
+            <div
+              key={p.name}
+              className="flex flex-col rounded-3xl border border-gray-200 bg-white p-7"
+            >
+              <div className="text-sm font-semibold text-gray-700">
+                {p.name}
+              </div>
+              <div className="mt-3 flex items-baseline gap-1.5">
+                <div className="font-display text-4xl font-semibold tracking-[-0.02em] text-gray-900">
+                  {p.price}
+                </div>
+              </div>
+              <div className="mt-1 text-xs text-gray-500">{p.sub}</div>
+              <p className="mt-5 text-sm leading-7 text-gray-700">
+                {p.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Money-back guarantee — green outline only (no fill) */}
+        <div className="mt-10 flex flex-col items-center gap-4 rounded-3xl border-2 border-emerald-500 bg-transparent px-8 py-7 text-center md:flex-row md:gap-6 md:text-left">
+          <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-emerald-500 text-xl text-emerald-600">
+            ✓
+          </div>
+          <div className="flex-1">
+            <div className="font-display text-base font-semibold text-gray-900 md:text-lg">
+              全額返金保証
+            </div>
+            <p className="mt-1 text-sm leading-6 text-gray-700">
+              お客さまの成果に真摯にコミットしたいと考えており、
+              もし結果にご満足いただけなければご料金は全額返金いたします。
+            </p>
+          </div>
+        </div>
+
+        <ul className="mt-8 space-y-2 text-xs leading-6 text-gray-500">
+          <li>
+            ※ 上記は目安です。機能・利用人数・データ量・セキュリティ要件・外部システム連携の有無により変動します。
+          </li>
+          <li>
+            ※ AI API・サーバー等の利用料は別途実費精算となります。
+          </li>
+          <li>
+            ※ ご要望に応じて、できるだけ月額負担を抑えた構成をご提案します。
+          </li>
+        </ul>
+      </div>
+    </section>
+  );
+}
