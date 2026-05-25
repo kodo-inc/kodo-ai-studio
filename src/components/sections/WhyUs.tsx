@@ -54,7 +54,7 @@ export default function WhyUs() {
             御社のAI導入に入ります。
           </h2>
           <p className="mt-6 text-base leading-7 text-gray-600 md:text-lg md:leading-8">
-            技術提供だけのベンダーではなく、大企業や成長スタートアップでPM・新規事業・C向けプロダクト開発をリードしてきたリーダー人材が、
+            技術提供だけのベンダーではなく、大企業や成長スタートアップでPM・新規事業・プロダクト開発をリードしてきたリーダー人材が、
             事業課題から逆算してAI活用を組み立てます。
           </p>
         </div>

@@ -9,7 +9,7 @@ export default function Footer() {
             </span>
           </div>
           <p className="mt-4 text-sm leading-6 text-gray-600">
-            大企業や成長スタートアップでPM・新規事業・C向けプロダクト開発をリードしてきたリーダー人材が、
+            大企業や成長スタートアップでPM・新規事業・プロダクト開発をリードしてきたリーダー人材が、
             御社のAI活用を構想から運用まで一気通貫でご支援するパートナーです。
           </p>
         </div>
