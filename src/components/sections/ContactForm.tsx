@@ -215,7 +215,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-black px-7 text-sm font-medium text-white transition-colors hover:bg-gray-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="mt-8 inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-[#6848E5] px-7 text-sm font-medium text-white transition-colors hover:bg-[#5638d3] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? "送信中…" : "ご相談を送信する"}
         {status !== "submitting" && <span aria-hidden>→</span>}

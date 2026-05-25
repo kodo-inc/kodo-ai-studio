@@ -31,13 +31,13 @@ export default function Header() {
         </nav>
         <a
           href="#contact"
-          className="hidden rounded-full bg-black px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800 md:inline-flex"
+          className="hidden rounded-full bg-[#6848E5] px-5 py-2 text-sm font-medium text-white transition-colors hover:bg-[#5638d3] md:inline-flex"
         >
           無料で相談する
         </a>
         <a
           href="#contact"
-          className="rounded-full bg-black px-4 py-2 text-xs font-medium text-white md:hidden"
+          className="rounded-full bg-[#6848E5] px-4 py-2 text-xs font-medium text-white md:hidden"
         >
           相談する
         </a>

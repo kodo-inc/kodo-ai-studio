@@ -56,7 +56,7 @@ export default function Issues() {
             </div>
             <a
               href="#contact"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-black px-7 text-sm font-medium text-white transition-colors hover:bg-gray-800"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#6848E5] px-7 text-sm font-medium text-white transition-colors hover:bg-[#5638d3]"
             >
               まずは相談してみる <span aria-hidden>→</span>
             </a>

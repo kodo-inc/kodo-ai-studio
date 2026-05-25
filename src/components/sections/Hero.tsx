@@ -46,7 +46,7 @@ export default function Hero() {
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <a
             href="#contact"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-black px-7 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800"
+            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-[#6848E5] px-7 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#5638d3]"
           >
             無料で相談する
             <span aria-hidden>→</span>

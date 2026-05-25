@@ -35,7 +35,7 @@ export default function StickyCTA() {
         </div>
         <a
           href="#contact"
-          className="ml-auto inline-flex h-11 items-center gap-2 rounded-full bg-black px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gray-800"
+          className="ml-auto inline-flex h-11 items-center gap-2 rounded-full bg-[#6848E5] px-6 text-sm font-medium text-white shadow-sm transition-colors hover:bg-[#5638d3]"
         >
           無料で相談する <span aria-hidden>→</span>
         </a>
