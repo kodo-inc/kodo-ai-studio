@@ -62,7 +62,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:text-gray-900"
               >
-                運営会社 ↗
+                運営会社
               </a>
             </li>
           </ul>
