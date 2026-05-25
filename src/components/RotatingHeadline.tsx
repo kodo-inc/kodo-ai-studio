@@ -4,12 +4,9 @@ import { useEffect, useState } from "react";
 
 const words = [
   "AIの導入支援",
-  "爆速AIアプリ開発",
+  "AIアプリ制作",
   "爆速ホームページ制作",
-  "Claude Codeの使い方",
   "デジタル化支援",
-  "新規事業の高速検証",
-  "SNSマーケティング支援",
 ];
 
 const longest = words.reduce((a, b) => (a.length >= b.length ? a : b));
