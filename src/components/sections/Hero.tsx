@@ -1,21 +1,4 @@
-// ────────────────────────────────────────────────────────────────
-// Hero subcopy options (user picked A; B/C kept for swap)
-//
-// A (current — 業界例示型):
-//   AI開発・PM・新規事業・プロダクト開発まで複数領域をリードしてきたメンバーたちが、
-//   IT・製造・小売・飲食・医療・建設・士業・サービスなど業種を問わず、御社のAI活用を構想・検証・本実装・運用まで
-//   一気通貫で支援。事業全体を俯瞰しながら、適切なAI活用を組み立てます。
-//
-// B (業種・業界を問わず型):
-//   AI開発・PM・新規事業・プロダクト開発まで複数領域をリードしてきたメンバーたちが、
-//   業種・業界を問わず御社のAI活用を構想・検証・本実装・運用まで一気通貫で支援。
-//   事業全体を俯瞰しながら、現場の業務に馴染むAI活用を組み立てます。
-//
-// C (現場業務フィット型):
-//   AI開発・PM・新規事業・プロダクト開発まで複数領域をリードしてきたメンバーたちが、
-//   御社の事業や現場業務にフィットするAI活用を構想・検証・本実装・運用まで一気通貫で支援。
-//   業種を問わず、事業全体を俯瞰しながら適切なAI活用を組み立てます。
-// ────────────────────────────────────────────────────────────────
+import RotatingHeadline from "../RotatingHeadline";
 
 export default function Hero() {
   return (
@@ -32,15 +15,14 @@ export default function Hero() {
         </div>
 
         <h1 className="mt-7 max-w-4xl font-display text-[40px] font-semibold leading-[1.12] tracking-[-0.02em] text-gray-900 md:text-[64px]">
-          AIの導入支援で
+          <RotatingHeadline />
           <br />
           事業の成長や効率化をサポートします。
         </h1>
 
         <p className="mt-7 max-w-3xl text-base leading-7 text-gray-600 md:text-lg md:leading-8">
-          AI開発・PM・新規事業・プロダクト開発まで複数領域をリードしてきたメンバーたちが、
-          IT・製造・小売・飲食・医療・建設・士業・サービスなど業種を問わず、御社のAI活用を構想・検証・本実装・運用まで一気通貫で支援。
-          事業全体を俯瞰しながら、適切なAI活用を組み立てます。
+          AI開発・PM・新規事業・プロダクト開発などをリードしてきたメンバーたちが、
+          IT・製造・小売・飲食・医療・建設・士業・サービスなど業種を問わず、御社のAI活用・デジタル化・Webサービス制作・アプリ制作などを企画・検証・実装・運用まで一気通貫でサポートします。
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -62,7 +44,7 @@ export default function Hero() {
         <div className="mt-16 grid max-w-3xl gap-4 sm:grid-cols-3">
           <Stat label="初回相談" value="無料" sub="30分・オンライン" />
           <Stat label="最短" value="2週間" sub="最速で動くものを作ります" />
-          <Stat label="月額運用" value="5万円〜" sub="AIの導入サポートから" />
+          <Stat label="最低価格" value="5万円〜" sub="AIの導入サポートから" />
         </div>
       </div>
     </section>

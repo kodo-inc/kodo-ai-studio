@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 const interestOptions = [
@@ -13,9 +14,20 @@ const interestOptions = [
   "その他",
 ];
 
-type Status = "idle" | "submitting" | "success" | "error";
+type Status = "idle" | "submitting" | "error";
+
+// Cookie reader to forward fbp/fbc to API (helps Meta CAPI dedup/attribution)
+const readCookie = (name: string): string | undefined => {
+  if (typeof document === "undefined") return undefined;
+  const match = document.cookie
+    .split(";")
+    .map((c) => c.trim())
+    .find((c) => c.startsWith(`${name}=`));
+  return match ? decodeURIComponent(match.slice(name.length + 1)) : undefined;
+};
 
 export default function ContactForm() {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [interests, setInterests] = useState<string[]>([]);
@@ -42,6 +54,8 @@ export default function ContactForm() {
       message: String(formData.get("message") ?? ""),
       consent: formData.get("consent") === "on",
       hp: String(formData.get("hp_field") ?? ""),
+      fbp: readCookie("_fbp"),
+      fbc: readCookie("_fbc"),
     };
 
     try {
@@ -56,39 +70,12 @@ export default function ContactForm() {
         throw new Error(data.error ?? `送信に失敗しました (${res.status})`);
       }
 
-      setStatus("success");
-      (e.target as HTMLFormElement).reset();
-      setInterests([]);
+      router.push("/thanks");
     } catch (err) {
       setStatus("error");
       setErrorMessage(err instanceof Error ? err.message : "送信に失敗しました");
     }
   };
-
-  if (status === "success") {
-    return (
-      <div className="rounded-3xl border border-gray-200 bg-white p-10 text-center shadow-sm">
-        <div className="mx-auto inline-flex h-14 w-14 items-center justify-center rounded-full bg-gray-900 text-2xl text-white">
-          ✓
-        </div>
-        <h3 className="mt-5 text-xl font-semibold text-gray-900">
-          ご相談を受け付けました
-        </h3>
-        <p className="mt-3 text-sm leading-7 text-gray-700">
-          ありがとうございます。2営業日以内にメールでご返信します。
-          <br />
-          内容によっては、こちらから日程候補をお送りすることもあります。
-        </p>
-        <button
-          type="button"
-          onClick={() => setStatus("idle")}
-          className="mt-7 inline-flex h-11 items-center justify-center rounded-full border border-gray-300 bg-white px-6 text-sm font-medium text-gray-900 transition-colors hover:border-gray-400 hover:bg-gray-50"
-        >
-          別の相談を送る
-        </button>
-      </div>
-    );
-  }
 
   return (
     <form
@@ -201,7 +188,8 @@ export default function ContactForm() {
           className="mt-1 h-4 w-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"
         />
         <span>
-          プライバシーポリシーに同意の上、送信します。
+          <a href="/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-900">プライバシーポリシー</a>
+          に同意の上、送信します。
           いただいた情報はご相談対応の目的にのみ使用します。
         </span>
       </label>

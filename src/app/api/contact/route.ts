@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { createHash } from "node:crypto";
 
 export const runtime = "nodejs";
 
@@ -13,6 +14,8 @@ type ContactPayload = {
   message?: string;
   consent?: boolean;
   hp?: string;
+  fbp?: string;
+  fbc?: string;
 };
 
 const escapeHtml = (input: string) =>
@@ -25,6 +28,98 @@ const escapeHtml = (input: string) =>
 
 const isValidEmail = (value: string) =>
   /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+
+const sha256 = (value: string) =>
+  createHash("sha256").update(value).digest("hex");
+
+const getClientIp = (request: Request): string | undefined => {
+  const xff = request.headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0]?.trim();
+  const real = request.headers.get("x-real-ip");
+  if (real) return real;
+  return undefined;
+};
+
+// Cookie value extractor (fbp / fbc set by Meta Pixel on client)
+const getCookie = (cookieHeader: string | null, name: string): string | undefined => {
+  if (!cookieHeader) return undefined;
+  const match = cookieHeader
+    .split(";")
+    .map((c) => c.trim())
+    .find((c) => c.startsWith(`${name}=`));
+  return match ? decodeURIComponent(match.slice(name.length + 1)) : undefined;
+};
+
+// Send Lead event to Meta Conversions API
+const sendMetaCapiLead = async ({
+  email,
+  phone,
+  request,
+  fbpFromBody,
+  fbcFromBody,
+}: {
+  email: string;
+  phone: string;
+  request: Request;
+  fbpFromBody?: string;
+  fbcFromBody?: string;
+}): Promise<void> => {
+  const pixelId = process.env.META_PIXEL_ID ?? process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const accessToken = process.env.META_CAPI_ACCESS_TOKEN;
+
+  if (!pixelId || !accessToken) {
+    return; // CAPI not configured; silently skip
+  }
+
+  const cookieHeader = request.headers.get("cookie");
+  const fbp = fbpFromBody ?? getCookie(cookieHeader, "_fbp");
+  const fbc = fbcFromBody ?? getCookie(cookieHeader, "_fbc");
+  const userAgent = request.headers.get("user-agent") ?? undefined;
+  const clientIp = getClientIp(request);
+
+  const normalizedEmail = email.trim().toLowerCase();
+  const normalizedPhone = phone.replace(/[^\d]/g, "");
+
+  const userData: Record<string, unknown> = {
+    em: [sha256(normalizedEmail)],
+  };
+  if (normalizedPhone) userData.ph = [sha256(normalizedPhone)];
+  if (clientIp) userData.client_ip_address = clientIp;
+  if (userAgent) userData.client_user_agent = userAgent;
+  if (fbp) userData.fbp = fbp;
+  if (fbc) userData.fbc = fbc;
+
+  const payload = {
+    data: [
+      {
+        event_name: "Lead",
+        event_time: Math.floor(Date.now() / 1000),
+        event_source_url: "https://ai.kodo-studio.com/",
+        action_source: "website",
+        user_data: userData,
+        custom_data: {
+          content_name: "Contact Form Submission",
+          currency: "JPY",
+        },
+      },
+    ],
+  };
+
+  try {
+    const url = `https://graph.facebook.com/v18.0/${pixelId}/events?access_token=${encodeURIComponent(accessToken)}`;
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      console.error("[contact] Meta CAPI error", res.status, text);
+    }
+  } catch (err) {
+    console.error("[contact] Meta CAPI exception", err);
+  }
+};
 
 export async function POST(request: Request) {
   let body: ContactPayload;
@@ -158,6 +253,15 @@ export async function POST(request: Request) {
         { status: 502 }
       );
     }
+
+    // Fire Meta CAPI Lead event (non-blocking — don't fail the response if CAPI fails)
+    await sendMetaCapiLead({
+      email,
+      phone,
+      request,
+      fbpFromBody: body.fbp,
+      fbcFromBody: body.fbc,
+    });
 
     return NextResponse.json({ ok: true });
   } catch (err) {
