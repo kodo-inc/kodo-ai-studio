@@ -80,15 +80,15 @@ const others = [
   },
   {
     num: "06",
-    title: "AIマーケティング支援",
+    title: "マーケティング支援",
     body:
-      "AIを使ったTikTokやInstagramなどのSNSマーケティング、広告運用のサポートなどを行います。",
+      "広告運用（Meta / Google / TikTok 等）とソーシャルメディア運用、AIを活用したコンテンツ制作・配信オペレーションまで、戦略設計から実行までをサポートします。",
   },
   {
     num: "07",
-    title: "保守・改善",
+    title: "ゲーミフィケーション事業",
     body:
-      "導入後の不具合対応、改善、機能追加、セキュリティ面の見直しまで継続的に支援します。一度作って終わりではなく、業務に合わせて育てます。",
+      "ゲームの企画・開発から、既存サービスへのゲーミフィケーション要素の導入まで対応。継続率・課金率など収益性の向上を、プロダクト設計と運用改善で実現します。",
   },
   {
     num: "08",
@@ -110,12 +110,12 @@ export default function Services() {
             Services
           </div>
           <h2 className="mt-3 font-display text-3xl font-semibold tracking-[-0.02em] text-gray-900 md:text-5xl md:leading-[1.15]">
-            AI導入相談から
+            企画・PMから開発・
             <br className="hidden md:block" />
-            PM・開発・マーケティング支援まで
+            マーケティング・運用まで
           </h2>
           <p className="mt-6 text-base leading-7 text-gray-600 md:text-lg md:leading-8">
-            あらゆる領域であなたのビジネスをお手伝いいたします。
+            AI・Webサイト・アプリ・ゲーム・マーケティングなど、あらゆる領域であなたのビジネスをお手伝いいたします。
           </p>
         </div>
 

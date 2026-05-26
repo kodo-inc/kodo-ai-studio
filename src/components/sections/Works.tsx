@@ -58,17 +58,17 @@ const works = [
   },
   {
     category: "マーケティング",
-    title: "グローバルSNSマーケティング",
+    title: "広告運用",
     description:
-      "日本・北米・アジア圏など海外市場に向けたSNS運用・広告戦略の設計と実行。ローカライズ・カルチャー設計・KPI設計までを一気通貫でサポートします。",
-    tags: ["グローバル", "SNS運用", "海外展開"],
+      "Meta / Google / TikTok などのプラットフォームでの広告運用を、戦略設計からクリエイティブ制作・配信改善まで一気通貫でサポートします。",
+    tags: ["Meta広告", "Google広告", "TikTok広告"],
   },
   {
     category: "個人向けアプリ",
     title: "個人用英語学習アプリ",
     description:
       "クライアントの経営者のニーズに合わせて、学習履歴・レベルに沿って出題・会話練習をパーソナライズするAI英語学習アプリを企画・開発・運用。",
-    tags: ["AIネイティブ", "EdTech", "パーソナライズ"],
+    tags: [],
   },
 ];
 
@@ -87,7 +87,7 @@ export default function Works() {
             実績
           </h2>
           <p className="mt-6 text-base leading-7 text-gray-600 md:text-lg md:leading-8">
-            AIを使った社内サービス構築、Webサイト構築、AIアプリ開発、PM支援、新規事業立ち上げなど、
+            AI導入・社内システム構築・Webサイト/アプリ/ゲーム開発・マーケティング・新規事業立ち上げなど、
             幅広い範囲でご相談を承ります。
           </p>
         </div>
@@ -107,16 +107,18 @@ export default function Works() {
               <p className="mt-3 flex-1 text-sm leading-7 text-gray-700">
                 {w.description}
               </p>
-              <ul className="mt-5 flex flex-wrap gap-1.5">
-                {w.tags.map((t) => (
-                  <li
-                    key={t}
-                    className="rounded-full bg-white px-2.5 py-1 text-[11px] text-gray-600 ring-1 ring-gray-200"
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
+              {w.tags.length > 0 && (
+                <ul className="mt-5 flex flex-wrap gap-1.5">
+                  {w.tags.map((t) => (
+                    <li
+                      key={t}
+                      className="rounded-full bg-white px-2.5 py-1 text-[11px] text-gray-600 ring-1 ring-gray-200"
+                    >
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </article>
           ))}
         </div>
