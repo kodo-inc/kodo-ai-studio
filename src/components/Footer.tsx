@@ -5,12 +5,12 @@ export default function Footer() {
         <div>
           <div className="flex items-center">
             <span className="text-[17px] font-bold tracking-tight text-black">
-              KODO AI Studio
+              KODO SOLUTIONS
             </span>
           </div>
           <p className="mt-4 text-sm leading-6 text-gray-600">
-            大企業や成長スタートアップでPM・新規事業・プロダクト開発をリードしてきたリーダー人材が、
-            御社のAI活用を構想から運用まで一気通貫でご支援するパートナーです。
+            大企業や成長スタートアップでPM・新規事業・プロダクト開発・ゲーム開発をリードしてきたリーダー人材が、
+            御社の事業を構想から運用まで一気通貫でご支援するパートナーです。
           </p>
         </div>
         <div>
@@ -25,22 +25,27 @@ export default function Footer() {
             </li>
             <li>
               <a href="#services" className="hover:text-gray-900">
-                社内サービス構築
+                業務AIシステム開発
               </a>
             </li>
             <li>
               <a href="#services" className="hover:text-gray-900">
-                PM支援
+                爆速ホームページ制作
               </a>
             </li>
             <li>
               <a href="#services" className="hover:text-gray-900">
-                AIアプリ開発
+                アプリ開発
               </a>
             </li>
             <li>
               <a href="#services" className="hover:text-gray-900">
                 マーケティング支援
+              </a>
+            </li>
+            <li>
+              <a href="#services" className="hover:text-gray-900">
+                ゲーミフィケーション事業
               </a>
             </li>
           </ul>
@@ -70,7 +75,7 @@ export default function Footer() {
       </div>
       <div className="border-t border-gray-200">
         <div className="mx-auto max-w-6xl px-5 py-5 text-xs text-gray-500">
-          © {new Date().getFullYear()} KODO AI Studio. All rights reserved.
+          © {new Date().getFullYear()} KODO SOLUTIONS. All rights reserved.
         </div>
       </div>
     </footer>

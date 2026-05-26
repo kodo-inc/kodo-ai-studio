@@ -13,13 +13,13 @@ export default function Contact() {
               Contact
             </div>
             <h2 className="mt-3 font-display text-3xl font-semibold tracking-[-0.02em] text-gray-900 md:text-4xl">
-              AIの導入支援で
+              事業を動かしてきた人材が、
               <br />
-              事業の成長や効率化をサポートします。
+              御社の事業をサポートします。
             </h2>
             <p className="mt-6 text-base leading-7 text-gray-700">
-              事業課題、業務上の困りごと、AI導入に向けた構想など、現在のフェーズに関わらずご相談を承ります。
-              技術を売り込むのではなく、「そもそもAIで解決すべきか」「他の手段との比較」も含めて、
+              事業課題、業務上の困りごと、新しいサービスの構想など、領域・フェーズを問わずご相談を承ります。
+              技術や手段を売り込むのではなく、「そもそも何で解決すべきか」も含めて、
               事業視点からご回答します。
             </p>
 
@@ -49,9 +49,9 @@ export default function Contact() {
                 こんなフェーズでもご相談を承ります
               </div>
               <ul className="mt-3 space-y-1.5 text-gray-700">
-                <li>・ 事業課題に対してAIで何ができるか整理したい</li>
+                <li>・ 事業課題に対して何ができるか整理したい</li>
                 <li>・ 概算費用やプロジェクト期間の感覚を掴みたい</li>
-                <li>・ 既存のAI導入プロジェクトの方向性を相談したい</li>
+                <li>・ 既存プロジェクトの方向性を相談したい</li>
                 <li>・ 新規事業・プロダクトの構想段階から壁打ちしたい</li>
               </ul>
             </div>

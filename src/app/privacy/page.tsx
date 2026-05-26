@@ -2,9 +2,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "プライバシーポリシー｜KODO AI Studio",
+  title: "プライバシーポリシー｜KODO SOLUTIONS",
   description:
-    "KODO AI Studio のプライバシーポリシー。個人情報の取扱い、Cookie・トラッキング技術の利用について。",
+    "KODO SOLUTIONS のプライバシーポリシー。個人情報の取扱い、Cookie・トラッキング技術の利用について。",
 };
 
 export default function PrivacyPage() {

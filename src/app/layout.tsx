@@ -17,14 +17,14 @@ const notoSansJp = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "KODO AI Studio｜あなたのビジネスにAIを導入して、成長や効率化を",
+  title: "KODO SOLUTIONS｜AI・Web・アプリ・ゲーム・マーケティングを一気通貫で",
   description:
-    "中小企業・スモールビジネスのためのAI導入支援。相談・PoC・社内サービス構築・PM・アプリ開発・マーケティングまで一気通貫でサポート。月額5万円から。",
+    "中小企業・スモールビジネスのための事業サポート。AI導入・業務システム・ホームページ/アプリ/ゲーム開発・マーケティング・PM支援・新規事業の検証まで一気通貫で対応。最低5万円から。",
   metadataBase: new URL("https://ai.kodo-studio.com"),
   openGraph: {
-    title: "KODO AI Studio｜AIで、あなたのビジネスを次のフェーズへ",
+    title: "KODO SOLUTIONS｜あなたのビジネスを次のフェーズへ",
     description:
-      "AI導入支援から開発・PM・マーケティングまで。中小企業のAI活用を一気通貫で伴走します。",
+      "AI・Web・アプリ・ゲーム・マーケティング・PMを一気通貫で。事業を動かしてきたメンバーが、御社の事業に伴走します。",
     locale: "ja_JP",
     type: "website",
   },

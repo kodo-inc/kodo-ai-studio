@@ -15,7 +15,7 @@ export default function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link href="/" className="flex items-center">
           <span className="text-base font-bold tracking-tight text-black md:text-[17px]">
-            KODO AI Studio
+            KODO SOLUTIONS
           </span>
         </Link>
         <nav className="hidden items-center gap-7 text-sm text-gray-600 md:flex">
