@@ -11,7 +11,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
           </span>
-          初回相談 受付中（無料・30分）
+          ご相談 受付中（30分）
         </div>
 
         <h1 className="mt-7 max-w-4xl font-display text-[40px] font-semibold leading-[1.12] tracking-[-0.02em] text-gray-900 md:text-[64px]">
@@ -22,6 +22,8 @@ export default function Hero() {
 
         <p className="mt-7 max-w-3xl text-base leading-7 text-gray-600 md:text-lg md:leading-8">
           AI開発・プロダクト開発・ゲーム開発・新規事業などをリードしてきたメンバーたちが、
+          IT・製造・小売・飲食・医療・建設・士業・サービスなど業種を問わず、
+          御社の業務改善・事業成長をサポートします。
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
