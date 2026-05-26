@@ -22,7 +22,6 @@ export default function Hero() {
 
         <p className="mt-7 max-w-3xl text-base leading-7 text-gray-600 md:text-lg md:leading-8">
           AI開発・プロダクト開発・ゲーム開発・新規事業などをリードしてきたメンバーたちが、
-          IT・製造・小売・飲食・医療・建設・士業・サービスなど業種を問わず、御社のAI活用・自動化・デジタル化・アプリ制作などを一気通貫でサポートします。
         </p>
 
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">

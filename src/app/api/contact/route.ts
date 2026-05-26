@@ -94,7 +94,7 @@ const sendMetaCapiLead = async ({
       {
         event_name: "Lead",
         event_time: Math.floor(Date.now() / 1000),
-        event_source_url: "https://ai.kodo-studio.com/",
+        event_source_url: "https://kodo-studio.com/",
         action_source: "website",
         user_data: userData,
         custom_data: {

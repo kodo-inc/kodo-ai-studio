@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: "KODO SOLUTIONS｜AI・Web・アプリ・ゲーム・マーケティングを一気通貫で",
   description:
     "中小企業・スモールビジネスのための事業サポート。AI導入・業務システム・ホームページ/アプリ/ゲーム開発・マーケティング・PM支援・新規事業の検証まで一気通貫で対応。最低5万円から。",
-  metadataBase: new URL("https://ai.kodo-studio.com"),
+  metadataBase: new URL("https://kodo-studio.com"),
   openGraph: {
     title: "KODO SOLUTIONS｜あなたのビジネスを次のフェーズへ",
     description:

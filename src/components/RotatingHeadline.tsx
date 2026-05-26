@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 const words = [
   "AIの導入支援",
-  "AIアプリ制作",
+  "アプリ制作",
   "爆速ホームページ制作",
   "ゲーミフィケーション",
   "デジタル化支援",
