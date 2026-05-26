@@ -30,8 +30,8 @@ export default function StickyCTA() {
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
             <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
           </span>
-          <span className="font-medium text-gray-900">初回相談 受付中</span>
-          <span className="text-gray-500">/ 無料・30分</span>
+          <span className="font-medium text-gray-900">ご相談 受付中</span>
+          <span className="text-gray-500">/ 30分</span>
         </div>
         <a
           href="#contact"
