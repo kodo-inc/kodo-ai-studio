@@ -29,7 +29,7 @@ export default function Issues() {
             ありませんか？
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-gray-600">
-            AI導入、業務効率化、Webサイト/アプリ/ゲーム開発、企画・PM支援、マーケティング、新規事業の検証など
+            AI導入、業務効率化、企画・PM支援、マーケティング、新規事業の検証など
             ── ご相談いただく内容の一例です。
           </p>
         </div>
