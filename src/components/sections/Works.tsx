@@ -53,7 +53,7 @@ const works = [
     category: "マーケティング",
     title: "SNSマーケティング",
     description:
-      "AIキャラクターを起点としたTikTok・Instagramマーケティングの戦略設計、コンテンツ運用、アウトリーチまでを日本・グローバルで設計・運用。",
+      "AIインフルエンサーを起点としたTikTok・Instagramマーケティングの戦略設計、コンテンツ運用、アウトリーチまでを日本・グローバルで設計・運用。",
     tags: ["TikTok", "Instagram", "戦略設計"],
     image: "/images/works/06-sns.jpg",
   },
