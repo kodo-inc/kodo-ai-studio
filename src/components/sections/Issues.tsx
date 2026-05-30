@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const issues = [
   "AIを導入したいが、何から始めれば良いか分からない",
   "電話予約・メール対応をAIで自動化したい",
@@ -15,8 +17,18 @@ const issues = [
 
 export default function Issues() {
   return (
-    <section className="border-b border-gray-200 bg-gray-50/50 py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-5">
+    <section className="relative overflow-hidden border-b border-gray-200 bg-gray-50/50 py-20 md:py-28">
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <Image
+          src="/images/bg/issues.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-[0.06]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/40 to-white/80" />
+      </div>
+      <div className="relative z-10 mx-auto max-w-6xl px-5">
         <div className="mx-auto max-w-3xl text-center">
           <div className="text-xs font-semibold uppercase tracking-[0.2em] text-gray-500">
             Issues
