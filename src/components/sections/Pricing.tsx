@@ -67,22 +67,6 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* Money-back guarantee — green outline only (no fill) */}
-        <div className="mt-10 flex flex-col items-center gap-4 rounded-3xl border-2 border-emerald-500 bg-transparent px-8 py-7 text-center md:flex-row md:gap-6 md:text-left">
-          <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-2 border-emerald-500 text-xl text-emerald-600">
-            ✓
-          </div>
-          <div className="flex-1">
-            <div className="font-display text-base font-semibold text-gray-900 md:text-lg">
-              全額返金保証
-            </div>
-            <p className="mt-1 text-sm leading-6 text-gray-700">
-              私たちは、お客さまの成果に真摯にコミットしたいと考えており、
-              もし結果にご満足いただけなければご料金は全額返金いたします。
-            </p>
-          </div>
-        </div>
-
         <ul className="mt-8 space-y-2 text-xs leading-6 text-gray-500">
           <li>
             ※ 上記は目安です。機能・利用人数・データ量・セキュリティ要件・外部システム連携の有無により変動します。
