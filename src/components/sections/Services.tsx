@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 // ────────────────────────────────────────────────────────────────
 // Body / motivation options (user picked A for each; B/C/D/E kept for swap)
 //
@@ -48,6 +50,7 @@ const featured = [
     body:
       "事業課題と業務フローを起点に、AIで効果が出るポイントを構造的に洗い出します。手段から入らず、目的・成果指標・優先度を整理した上で、御社の規模・体制・予算に合わせた導入ロードマップをご提示します。",
     tags: ["事業課題ヒアリング", "投資対効果試算", "優先度設計", "導入ロードマップ"],
+    image: "/images/services/01-ai.jpg",
   },
   {
     num: "02",
@@ -56,6 +59,7 @@ const featured = [
     body:
       "業務効率化、問い合わせ対応、レポート作成、データ活用など、御社の課題に合わせたAIシステムを設計・開発します。課題整理から仕様策定、開発、導入後の改善まで、現場で実際に使われる形を目指して支援します。",
     tags: ["業務効率化", "問い合わせ対応", "レポート自動化", "データ活用"],
+    image: "/images/services/02-system.jpg",
   },
 ];
 
@@ -115,7 +119,7 @@ export default function Services() {
             マーケティング・運用まで
           </h2>
           <p className="mt-6 text-base leading-7 text-gray-600 md:text-lg md:leading-8">
-            AI・Webサイト・アプリ・ゲーム・マーケティングなど、あらゆる領域であなたのビジネスをお手伝いいたします。
+            AI導入・デジタル化・プロジェクトの推進・Webサイト製作・アプリ開発・企画・プロデュース・マーケティングなど、あらゆる領域であなたのビジネスをお手伝いいたします。
           </p>
         </div>
 
@@ -124,37 +128,47 @@ export default function Services() {
           {featured.map((s) => (
             <article
               key={s.num}
-              className="relative flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50/60 to-white p-8 md:p-10"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50/60 to-white"
             >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
-
-              <div className="flex items-baseline justify-between">
-                <span className="font-display text-xs font-semibold tracking-[0.2em] text-gray-500">
-                  {s.num}
-                </span>
+              <div className="relative aspect-[16/9] overflow-hidden bg-gray-100">
+                <Image
+                  src={s.image}
+                  alt={s.title}
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
-              <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight text-gray-900 md:text-3xl">
-                {s.title}
-              </h3>
-              <p className="mt-2 text-sm text-gray-500 md:text-base">
-                {s.sub}
-              </p>
+              <div className="flex flex-1 flex-col p-8 md:p-10">
+                <div className="flex items-baseline justify-between">
+                  <span className="font-display text-xs font-semibold tracking-[0.2em] text-gray-500">
+                    {s.num}
+                  </span>
+                </div>
 
-              <p className="mt-6 flex-1 text-sm leading-7 text-gray-700 md:text-[15px] md:leading-7">
-                {s.body}
-              </p>
+                <h3 className="mt-6 font-display text-2xl font-semibold tracking-tight text-gray-900 md:text-3xl">
+                  {s.title}
+                </h3>
+                <p className="mt-2 text-sm text-gray-500 md:text-base">
+                  {s.sub}
+                </p>
 
-              <ul className="mt-7 flex flex-wrap gap-1.5">
-                {s.tags.map((t) => (
-                  <li
-                    key={t}
-                    className="rounded-full bg-white px-3 py-1 text-[11px] text-gray-600 ring-1 ring-gray-200"
-                  >
-                    {t}
-                  </li>
-                ))}
-              </ul>
+                <p className="mt-6 flex-1 text-sm leading-7 text-gray-700 md:text-[15px] md:leading-7">
+                  {s.body}
+                </p>
+
+                <ul className="mt-7 flex flex-wrap gap-1.5">
+                  {s.tags.map((t) => (
+                    <li
+                      key={t}
+                      className="rounded-full bg-white px-3 py-1 text-[11px] text-gray-600 ring-1 ring-gray-200"
+                    >
+                      {t}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </article>
           ))}
         </div>
